@@ -1,0 +1,9 @@
+-i=4        #4 cols indention
+-ci=2       #continuation indention
+-l=120      #max line width
+-bl         #Open braces left and without indention
+-sbl        #Same behaviour for 'sub' blocks
+-nsfs       #No Space before ; in for loop header
+-nolq       #Don't outdent long comments to the first col
+-bext=tdybak#Backup extension
+-b          #Tidy in-place and create backup of the old code
