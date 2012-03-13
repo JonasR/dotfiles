@@ -1,0 +1,19 @@
+#Don't use inline comments, remove trailing whitespace
+###OSX/Windows BS
+.DS_Store*
+Thumbs.db
+ehthumbs.db
+###Others
+*.swp
+*.Rout
+#Do not ignore vim undo files
+!*.un~          
+#Do not ignore dotfiles
+!.*  
+*~
+*.tdybak
+###Latex
+*.tex.backup
+*.bbl
+*.aux
+*.blg

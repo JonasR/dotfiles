@@ -1,0 +1,20 @@
+[user]
+    name = Jonas Reeb
+    email = reeb@in.tum.de
+[core]
+    excludesfile = /home/jonas/.gitignore_global
+    editor = vim
+[color]
+    ui = auto           # --> diff = true, status = auto, branch = auto
+    interactive = true  # Not sure if even necessary with above
+    pager = true
+[alias]
+    c = commit -a
+    s = status -a
+    d = diff --color-words
+    ds = diff --stat
+    co = checkout
+    lgl = log --graph --decorate --abbrev-commit --stat
+    lgs = log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"
+    last = cat-file commit HEAD
+    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
