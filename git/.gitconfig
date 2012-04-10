@@ -2,7 +2,7 @@
     name = Jonas Reeb
     email = reeb@in.tum.de
 [core]
-    excludesfile = /home/jonas/.gitignore_global
+	excludesfile = /home/jonas/.gitignore_global
     editor = vim
 [color]
     ui = auto           # --> diff = true, status = auto, branch = auto
@@ -10,7 +10,7 @@
     pager = true
 [alias]
     c = commit -a
-    s = status -a
+    s = status -s
     d = diff --color-words
     ds = diff --stat
     co = checkout
