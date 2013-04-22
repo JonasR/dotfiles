@@ -33,3 +33,6 @@ copyFiles $BASE/fonts/ProggyClean.ttf ~/.fonts/ProggyClean.ttf
 ###Xmodmap
 copyFiles $BASE/xmodmap/.Xmodmap ~/.Xmodmap
 xmodmap ~/.Xmodmap
+
+###Terminator
+copyFiles $BASE/terminator/config ~/.config/terminator/config
