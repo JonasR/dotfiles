@@ -24,9 +24,14 @@ git config --global core.excludesfile ~/.gitignore_global
 copyFiles $BASE/bash/.bashrc ~/.bashrc
 
 ###Vim
+mkdir -p ~/.vim/
+
+copyFiles $BASE/vim/.vimrc ~/.vimrc
+copyFiles $BASE/vim/colors ~/.vim/colors
+copyFiles $BASE/vim/syntax ~/.vim/syntax 
 
 ###Fonts
-mkdir -f ~/.fonts/
+mkdir -p ~/.fonts/
 
 copyFiles $BASE/fonts/EnvyCodeR.ttf ~/.fonts/EnvyCodeR.ttf
 copyFiles $BASE/fonts/Inconsolata.otf ~/.fonts/Inconsolata.otf
