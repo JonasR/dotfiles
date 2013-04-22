@@ -26,6 +26,8 @@ copyFiles $BASE/bash/.bashrc ~/.bashrc
 ###Vim
 
 ###Fonts
+mkdir -f ~/.fonts/
+
 copyFiles $BASE/fonts/EnvyCodeR.ttf ~/.fonts/EnvyCodeR.ttf
 copyFiles $BASE/fonts/Inconsolata.otf ~/.fonts/Inconsolata.otf
 copyFiles $BASE/fonts/ProggyClean.ttf ~/.fonts/ProggyClean.ttf
