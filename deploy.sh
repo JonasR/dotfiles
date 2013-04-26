@@ -23,6 +23,10 @@ git config --global core.excludesfile ~/.gitignore_global
 ###Bash
 copyFiles $BASE/bash/.bashrc ~/.bashrc
 
+###ZSH
+copyFiles $BASE/zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
+copyFiles $BASE/zsh/export.zsh ~/.oh-my-zsh/custom/export.zsh
+
 ###Vim
 mkdir -p ~/.vim/
 
