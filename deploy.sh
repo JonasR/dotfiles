@@ -47,3 +47,5 @@ xmodmap ~/.Xmodmap
 
 ###Terminator
 copyFiles $BASE/terminator/config ~/.config/terminator/config
+#To set terminator as default in ubuntu
+#gsettings set org.gnome.desktop.default-applications.terminal exec 'terminator'
