@@ -10,6 +10,7 @@
     pager = true
 [alias]
     c = commit -a
+    a = add
     s = status -s
     d = diff --color-words
     ds = diff --stat
