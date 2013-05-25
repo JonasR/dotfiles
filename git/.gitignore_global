@@ -3,6 +3,7 @@
 .DS_Store*
 Thumbs.db
 ehthumbs.db
+~$*
 ###Others
 *.swp
 *.Rout
