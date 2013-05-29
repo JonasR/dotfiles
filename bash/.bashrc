@@ -61,9 +61,8 @@ fi
 ##########################################################################
 ###Behaviour
 shopt -s no_empty_cmd_completion    #Seriously this is useless
-shopt -s autocd     `               #cd without typing cd, as in zsh
+shopt -s autocd                    #cd without typing cd, as in zsh
 
-# TODO put in more aliases from zsh
 #More ls aliases    # TODO merge with the ones for zsh
 alias ll='ls -alF'
 alias la='ls -A'
@@ -83,3 +82,16 @@ fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+alias ll="ls -la"                                                                                                       
+alias .="cd ../"                                                                                                        
+alias ..="cd ../../"                                                                                                    
+alias ...="cd ../../../"                                                                                                
+alias ....="cd ../../../../"                                                                                            
+alias jt="ssh reeb@jobtest.rostclust"                                                                                   
+alias jt2="ssh reeb@jobtest2.rostclust"                                                                                 
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'                                            
+alias lg='logout'                                                                                                       
+alias ports='netstat -tulanp'                                                                                           
+#Bioinformatics                                                                                                         
+alias nfas='grep -c "^>"'
