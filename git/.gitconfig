@@ -1,6 +1,6 @@
 [user]
     name = Jonas Reeb
-    email = reeb@in.tum.de
+    email = jonas.reeb@googlemail.com 
 [core]
 	excludesfile = /home/jonas/.gitignore_global
     editor = vim
