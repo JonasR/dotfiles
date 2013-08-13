@@ -9,7 +9,8 @@
     interactive = true  # Not sure if even necessary with above
     pager = true
 [alias]
-    c = commit -a
+    c = commit
+    ca = commit -a
     a = add
     s = status -s
     d = diff --color-words

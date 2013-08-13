@@ -7,6 +7,7 @@ ehthumbs.db
 ###Others
 *.swp
 *.Rout
+*.RData
 #Do not ignore vim undo files
 !*.un~          
 #Do not ignore dotfiles
