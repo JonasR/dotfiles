@@ -1,5 +1,5 @@
 BASE=`pwd`
-FORCE=1
+FORCE=0
 
 copyFiles()
 {
@@ -26,6 +26,7 @@ copyFiles $BASE/bash/.bashrc ~/.bashrc
 ###ZSH
 copyFiles $BASE/zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
 copyFiles $BASE/zsh/export.zsh ~/.oh-my-zsh/custom/export.zsh
+copyFiles $BASE/zsh/funcs.zsh ~/.oh-my-zsh/custom/funcs.zsh
 
 ###Vim
 mkdir -p ~/.vim/
