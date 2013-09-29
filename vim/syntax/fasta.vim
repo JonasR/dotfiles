@@ -49,4 +49,6 @@ endif
 
 let b:current_syntax = "fasta"
 
+set nowrap
+
 " vim: ts=4
