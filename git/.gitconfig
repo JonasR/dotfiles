@@ -11,7 +11,9 @@
 [alias]
     c = commit
     ca = commit -a
+    cam = commit --amend
     a = add
+    ap = add -p
     s = status -s
     d = diff --color-words
     ds = diff --stat
