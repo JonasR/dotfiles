@@ -19,3 +19,5 @@ ehthumbs.db
 *.bbl
 *.aux
 *.blg
+*.toc
+*.pyg
