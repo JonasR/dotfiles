@@ -98,6 +98,28 @@ nmap <leader>q :q<CR>                       " ,q quits
 nmap <silent> <leader>s :set spell!<CR>     " toggle with ,s
 set spelllang=en_gb
 
+" Pasting, from Tim Pope's unimpaired plugin
+function! s:setup_paste() abort
+  let s:paste = &paste
+  set paste
+endfunction
+
+nnoremap <silent> <Plug>unimpairedPaste :call <SID>setup_paste()<CR>
+
+nnoremap <silent> yo  :call <SID>setup_paste()<CR>o
+nnoremap <silent> yO  :call <SID>setup_paste()<CR>O
+nnoremap <silent> yA  :call <SID>setup_paste()<CR>A
+nnoremap <silent> yI  :call <SID>setup_paste()<CR>I
+
+augroup unimpaired_paste
+  autocmd!
+  autocmd InsertLeave *
+        \ if exists('s:paste') |
+        \   let &paste = s:paste |
+        \   unlet s:paste |
+        \ endif
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Additional filetypes
 
