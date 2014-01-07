@@ -12,7 +12,7 @@ set history=800
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
-set relativenumber      " relative line numbers
+set relativenumber      " relative line numbers, improvements on this at 'line numbering' below
 set title               " show title in console title bar
 set showmatch           " Show matching brackets.
 set laststatus=2        " always show status line
@@ -119,6 +119,24 @@ augroup unimpaired_paste
         \   unlet s:paste |
         \ endif
 augroup END
+
+" Line numbering
+" Pretty much from here http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+  else
+    set rnu
+  endif
+endfunc
+
+nnoremap <leader>n :call NumberToggle()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Additional filetypes
