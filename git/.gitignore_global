@@ -21,3 +21,5 @@ ehthumbs.db
 *.blg
 *.toc
 *.pyg
+###Python
+*.py[cod]
