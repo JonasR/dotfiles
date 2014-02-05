@@ -144,6 +144,8 @@ nnoremap <leader>n :call NumberToggle()<CR>
 au BufNewFile,BufRead *.fasta       set filetype=fasta
 au BufNewFile,BufRead *.fa          set filetype=fasta
 au BufNewFile,BufRead *.clustalw    set filetype=align
+au BufNewFile,BufRead *.lens    set filetype=koken
+au BufNewFile,BufRead *.css.lens    set filetype=css
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color
