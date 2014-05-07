@@ -14,11 +14,15 @@
     cam = commit --amend
     a = add
     ap = add -p
+    aa = add --all
+    au = add --update
     s = status -s
     d = diff --color-words
     ds = diff --stat
+    dc = diff --cached
     co = checkout
     us = reset HEAD
+    pullff = pull --ff-only
     lgl = log --graph --decorate --abbrev-commit --stat
     lgs = log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\"
     last = cat-file commit HEAD
