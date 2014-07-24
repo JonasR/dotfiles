@@ -27,6 +27,7 @@ copyFiles $BASE/bash/.bashrc ~/.bashrc
 copyFiles $BASE/zsh/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
 copyFiles $BASE/zsh/export.zsh ~/.oh-my-zsh/custom/export.zsh
 copyFiles $BASE/zsh/funcs.zsh ~/.oh-my-zsh/custom/funcs.zsh
+copyFiles $BASE/zsh/.zshenv ~/.zshenv
 
 ###Vim
 mkdir -p ~/.vim/
