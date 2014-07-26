@@ -41,6 +41,8 @@ nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 " special meaning
 noremap / /\v
 set hlsearch        " highlight searches
+" toggle highlighting with ,h
+nmap <silent> <leader>h :set hlsearch!<CR>
 set incsearch       " incr. search
 set ignorecase      " Do case insensitive search
 set smartcase       " Don't ignore case if at least one letter upper case
