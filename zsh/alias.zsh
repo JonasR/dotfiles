@@ -13,3 +13,4 @@ alias ports='netstat -tulanp'
 alias nfas='grep -c "^>"'
 alias singfas='awk "/^>/ {printf(\"\n%s\n\",\$0);next; } { printf(\"%s\",\$0);}  END {printf(\"\n\");}"' #cf. http://www.biostars.org/p/9262/#9264
 alias summary='awk "{if(min==\"\"){min=max=\$1}; if(\$1>max) {max=\$1}; if(\$1<min) {min=\$1}; total+=\$1; count+=1} END {print \"avg:\" total/count, \"max:\" max, \"min:\"min}"'
+alias rsummary='Rscript -e "d <- (as.numeric (readLines (\"stdin\"))); summary(d); print(paste(\"SD:\", sd(d)))"'
