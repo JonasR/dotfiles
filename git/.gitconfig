@@ -9,14 +9,15 @@
     interactive = true  # Not sure if even necessary with above
     pager = true
 [alias]
-    c = commit
+    c = commit --untracked-files=no
     ca = commit -a
-    cam = commit --amend
+    cam = commit --amend --untracked-files=no
     a = add
     ap = add -p
     aa = add --all
     au = add --update
     s = status -s
+    sun = status -s --untracked-files=no
     d = diff --color-words
     ds = diff --stat
     dc = diff --cached
