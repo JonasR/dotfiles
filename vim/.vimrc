@@ -27,9 +27,14 @@ set list                " toggle show invisibles during runtime with 'set list!'
 
 " Window display and behaviour
 
-set winheight=30        " current window is always resized to 30 lines
-set winminheight=5      " all other windows are at least 5 lines
-
+" improved window resizing from: http://janneinosaka.blogspot.de/2014/10/automatically-resize-vim-splits.html
+function Splitresize()
+    let hmax = max([winwidth(0), float2nr(&columns*0.66), 90])
+    let vmax = max([winheight(0), float2nr(&lines*0.66), 25])
+    exe "vertical resize" . (min([hmax, 120]))
+    exe "resize" . (min([vmax, 60]))
+endfunction
+" Manual window height increase/decrease with +-
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 
@@ -42,7 +47,7 @@ nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 noremap / /\v
 set hlsearch        " highlight searches
 " toggle highlighting with ,h
-nmap <silent> <leader>h :set hlsearch!<CR>
+nmap <silent> <leader>hi :set hlsearch!<CR>
 set incsearch       " incr. search
 set ignorecase      " Do case insensitive search
 set smartcase       " Don't ignore case if at least one letter upper case
@@ -75,7 +80,12 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Fast window switching
-" Nothing decent right now, use manual Ctrl-w + hjkl
+" Directly use ctrl+hjkl to move between windows
+" In interactive mode, ctrl+hjk is used by neocomplcache
+nnoremap <silent><C-J> <C-W><C-J>:call Splitresize()<CR>
+nnoremap <silent><C-K> <C-W><C-K>:call Splitresize()<CR>
+nnoremap <silent><C-L> <C-W><C-L>:call Splitresize()<CR>
+nnoremap <silent><C-H> <C-W><C-H>:call Splitresize()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
@@ -92,6 +102,7 @@ set smartindent
 au FocusLost * :wa                          " save on lost focus, no big deal with persistent undo
 
 nnoremap <leader>v <C-w>v<C-w>l             " ,v opens new vsplit and switches there
+nnoremap <leader>h <C-w>s<C-w>j             " ,h opens new (horizontal)split and switches there
 nmap <leader>w :w!<CR>                      " ,w saves
 nmap <leader>wq :wq<CR>                     " ,wq saves and quits
 nmap <leader>q :q<CR>                       " ,q quits
