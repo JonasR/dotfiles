@@ -182,6 +182,52 @@ colorscheme wombat256_mod
 " Fonts
 set guifont=Envy\ Code\ R\ 11   " Terminal version font set by terminal
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Completion
+
+" Insert mode
+function SetNCCCompletionSettings()
+    exe "NeoComplCacheEnable"
+    let g:neocomplcache_enable_at_startup = 1
+    " disable AutoComplPop.ALL
+    let g:acp_enableAtStartup = 0
+    " Use neocomplcache.ALL
+    let g:neocomplcache_enable_at_startup = 1
+    " Use smartcase.ALL
+    let g:neocomplcache_enable_smart_case = 1
+    " Use camel case completion.ALL
+    let g:neocomplcache_enable_camel_case_completion = 1
+    " Use underbar completion.ALL
+    let g:neocomplcache_enable_underbar_completion = 1
+    " Set minimum syntax keyword length.ALL
+    let g:neocomplcache_min_syntax_length = 1
+    let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+    " Recommended key-mappings.ALL
+    " <CR>: close popup and save indent.ALL
+    inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
+    " <TAB>: completion.ALL use tab to cycle through completions
+    " alternatively use Ctrl-j and Ctrl-k
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+    inoremap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
+    " <C-h>, <BS>: close popup and delete backword char.ALL
+    inoremap <expr><C-h> neocomplcache#smart_close_popup(). "\<C-h>"
+    inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+    inoremap <expr><C-y>  neocomplcache#close_popup()
+    inoremap <expr><C-e>  neocomplcache#cancel_popup()
+endfunction
+
+function SetNoNCCCompletionSettings()
+    " In the absence of neocomplcache, use vims built-in omnicompletion
+    " Clunky though, ncc is recommended
+    setlocal omnifunc=syntaxcomplete#Complete   " Activate omincompletion for every supported filetypes. Trigger with <C-x><C-o>
+    set cot+=menuone                            " If there is only one match show the possible parameters
+     " Use <C-Spacebar> as alternative shortcut for invocation
+    inoremap <Nul> <C-x><C-o>
+endfunction
+
+autocmd VimEnter * if exists(":NeoComplCacheEnable") | :call SetNCCCompletionSettings() | else | :call SetNoNCCCompletionSettings() | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rest
@@ -203,38 +249,3 @@ endif
 " endif
 
 command -nargs=1 TS set tabstop=<args>
-
-let g:neocomplcache_enable_at_startup = 1
-" disable AutoComplPop.ALL
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.ALL
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.ALL
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.ALL
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.ALL
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.ALL
-let g:neocomplcache_min_syntax_length = 1
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Recommended key-mappings.ALL
-" <CR>: close popup and save indent.ALL
-inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
-" <TAB>: completion.ALL use tab to cycle through completions
-" alternatively use Ctrl-j and Ctrl-k
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
-" <C-h>, <BS>: close popup and delete backword char.ALL
-inoremap <expr><C-h> neocomplcache#smart_close_popup(). "\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
-""" Omnicompletion  Complete this, then merge it into git
-setlocal omnifunc=syntaxcomplete#Complete   " Activate omincompletion for every supported filetypes. Trigger with <C-x><C-o>
-set cot+=menuone                            " If there is only one match show the possible parameters
- " Remap omnicompletion shortcut to Ctrl+spacebar
-inoremap <Nul> <C-x><C-o>
