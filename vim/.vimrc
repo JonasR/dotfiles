@@ -1,6 +1,7 @@
-execute pathogen#infect()
+silent! execute pathogen#infect()
 
 " requires Vim >= 7.3
+
 let mapleader = ","
 
 " Reverse character search is too useful to ignore it altogether
@@ -61,7 +62,6 @@ noremap j gj
 noremap k gk
 noremap j gj
 noremap k gk
-
 
 " pro-mode ;) 
 nnoremap <up> <nop>
@@ -185,6 +185,10 @@ set guifont=Envy\ Code\ R\ 11   " Terminal version font set by terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Completion
 
+" Vim commands
+set wildmenu                        " tab completion for cmds
+set wildmode=list:longest,full      " whole list for cmds on 2nd tab
+
 " Insert mode
 function SetNCCCompletionSettings()
     exe "NeoComplCacheEnable"
@@ -235,17 +239,8 @@ autocmd VimEnter * if exists(":NeoComplCacheEnable") | :call SetNCCCompletionSet
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc         " reload changed vimrc
 " set mouse=a " mouse support
 
-
-set wildmenu                    " tab completion for cmds
-set wildmode=list:longest,full          " whole list for cmds on 2nd tab
-
-
 if has("syntax")
   syntax on
 endif
-
-"if filereadable("/etc/vim/vimrc.local")
-"  source /etc/vim/vimrc.local
-" endif
 
 command -nargs=1 TS set tabstop=<args>
