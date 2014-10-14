@@ -1,12 +1,15 @@
+[global_config]
+  inactive_color_offset = 1.0
 [profiles]
- [[default]]
-  font = Envy Code R 10
-  background_color = "#000000" # A comment
-  foreground_color = "#FFFFFF" # Note that hex colour values must be quoted
+  [[default]]
+    background_image = None
+    font = Envy Code R 10
+    background_color = "#000000"
+    foreground_color = "#FFFFFF"
 [layouts]
   [[default]]
     [[[window0]]]
       type = Window
       parent = ""
       profile = None
-      size = 800, 600
+      size = 1000, 600
