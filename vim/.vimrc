@@ -54,6 +54,9 @@ set ignorecase      " Do case insensitive search
 set smartcase       " Don't ignore case if at least one letter upper case
 set gdefault        " always do global search and global replace (s///g)
 
+" Search non-ASCII characters
+command SNASCII /[^\x00-\x7F]
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Movement
 
