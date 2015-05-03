@@ -19,7 +19,7 @@
     s = status -s
     sun = status -s --untracked-files=no
     d = diff --color-words
-    ds = diff --stat
+    ds = !git --no-pager diff --stat
     dc = diff --cached
     co = checkout
     us = reset HEAD
