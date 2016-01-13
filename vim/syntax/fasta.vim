@@ -49,9 +49,8 @@ endif
 
 let b:current_syntax = "fasta"
 
-set nowrap
+setlocal nowrap
 
-" vim: ts=4
 " Folding
 function! FastaFold()
     let thisline = getline(v:lnum)
