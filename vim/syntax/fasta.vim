@@ -52,3 +52,16 @@ let b:current_syntax = "fasta"
 set nowrap
 
 " vim: ts=4
+" Folding
+function! FastaFold()
+    let thisline = getline(v:lnum)
+    if match(thisline, '^>') >= 0
+        return ">1"
+    else
+        return "="    " same fold level as predecessor
+    endif
+endfunction
+
+setlocal foldmethod=expr
+setlocal foldexpr=FastaFold()
+setlocal foldcolumn=1
