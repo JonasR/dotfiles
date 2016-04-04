@@ -243,6 +243,17 @@ autocmd VimEnter * if exists(":NeoComplCacheEnable") | :call SetNCCCompletionSet
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rest
 
+" SimpyIFold
+let g:SimpylFold_docstring_preview = 1
+
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+" Python syntax
+let python_highlight_indent_errors = 1
+let python_highlight_space_errors = 1
+let python_highlight_doctests = 1
+
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc         " reload changed vimrc
 " set mouse=a " mouse support
 
