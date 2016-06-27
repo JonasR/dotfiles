@@ -69,7 +69,7 @@ noremap k gk
 noremap j gj
 noremap k gk
 
-" pro-mode ;) 
+" pro-mode ;)
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -113,7 +113,7 @@ nmap <leader>w :w!<CR>                      " ,w saves
 nmap <leader>wq :wq<CR>                     " ,wq saves and quits
 nmap <leader>q :q<CR>                       " ,q quits
 
-" Spellchecking 
+" Spellchecking
 nmap <silent> <leader>s :set spell!<CR>     " toggle with ,s
 set spelllang=en_gb
 
@@ -169,7 +169,7 @@ au BufNewFile,BufRead *.md          set filetype=markdown
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color
-            
+
 " Use more than eight colors in terminal
 " Many terminals will not set this variable to -256color although they support
 " it
@@ -181,7 +181,7 @@ endif
 " terminals and gvim
 colorscheme wombat256_mod
 " Alternatives
-" " 256Only: desert256 
+" " 256Only: desert256
 " " 256 + GUI: sorcerer, molokai, wombat256_mod, wombat256_orig, solarized
 " " GUI only: desert, cloudsmidnight
 
