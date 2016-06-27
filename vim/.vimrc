@@ -268,3 +268,5 @@ if has("syntax")
 endif
 
 command -nargs=1 TS set tabstop=<args>
+
+let python_highlight_all = 1
