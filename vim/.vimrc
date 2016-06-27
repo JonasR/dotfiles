@@ -243,6 +243,12 @@ autocmd VimEnter * if exists(":NeoComplCacheEnable") | :call SetNCCCompletionSet
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rest
 
+" Airline
+let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
 " SimpyIFold
 let g:SimpylFold_docstring_preview = 1
 
