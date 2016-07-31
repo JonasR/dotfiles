@@ -1,5 +1,3 @@
-silent! execute pathogen#infect()
-
 " requires Vim >= 7.3
 
 let mapleader = ","
@@ -10,6 +8,17 @@ noremap \ ,
 set nocompatible
 
 set history=800
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'hdima/python-syntax'
+Plugin 'vim-scripts/wombat256.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+call vundle#end()
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
@@ -179,7 +188,7 @@ endif
 
 " Modified version of wombat colorscheme, has portions for both 256 color
 " terminals and gvim
-colorscheme wombat256_mod
+colorscheme wombat256mod
 " Alternatives
 " " 256Only: desert256
 " " 256 + GUI: sorcerer, molokai, wombat256_mod, wombat256_orig, solarized
