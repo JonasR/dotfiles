@@ -47,6 +47,10 @@ copyFiles $BASE/fonts/ProggyClean.ttf ~/.fonts/ProggyClean.ttf
 copyFiles $BASE/xmodmap/.Xmodmap ~/.Xmodmap
 xmodmap ~/.Xmodmap
 
+###Matplotlib
+mkdir -p ~/.matplotlibrc/
+copyFiles $BASE/matplotlib/matplotlibrc ~/.matplotlibrc/matplotlibrc
+
 ###Terminator
 copyFiles $BASE/terminator/config ~/.config/terminator/config
 #To set terminator as default in ubuntu
