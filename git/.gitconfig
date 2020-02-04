@@ -26,6 +26,7 @@
     pullff = pull --ff-only
     lgl = log --graph --decorate --abbrev-commit --stat
     lgs = log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\"
+    lgsa = log --graph --all --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\"
     last = cat-file commit HEAD
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
     shown = show --pretty="format:" --name-only
